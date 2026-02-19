@@ -12,17 +12,25 @@ export default function DocumentUpload({ onUpload, isLoading }: DocumentUploadPr
   const [selectedTool, setSelectedTool] = useState<'financial' | 'earnings'>('financial');
   const [dragActive, setDragActive] = useState(false);
 
-  const handleFile = (file: File) => {
+  const handleFile = (file?: File) => {
+    if (!file) {
+      console.warn("No file selected");
+      return;
+    }
+
     if (file.type !== 'application/pdf') {
       alert('Please upload a PDF file');
       return;
     }
+
     if (file.size > 50 * 1024 * 1024) {
       alert('File is too large (max 50MB)');
       return;
     }
+
     setSelectedFile(file);
   };
+
 
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
@@ -36,7 +44,7 @@ export default function DocumentUpload({ onUpload, isLoading }: DocumentUploadPr
     setDragActive(false);
 
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      handleFile(e.dataTransfer.files[0]);
+      handleFile(e.dataTransfer.files?.[0]);
     }
   };
 
@@ -52,7 +60,7 @@ export default function DocumentUpload({ onUpload, isLoading }: DocumentUploadPr
   return (
     <div className={styles.card}>
       <h2>📁 Upload Document</h2>
-      
+
       <div className={styles.toolSelection}>
         <label className={styles.toolLabel}>
           <input
@@ -91,11 +99,11 @@ export default function DocumentUpload({ onUpload, isLoading }: DocumentUploadPr
             ref={fileInputRef}
             type="file"
             accept=".pdf"
-            onChange={(e) => e.target.files && handleFile(e.target.files[0])}
+            onChange={(e) => handleFile(e.target.files?.[0])}
             disabled={isLoading}
             hidden
           />
-          
+
           {!selectedFile ? (
             <>
               <p className={styles.dropText}>Drop PDF here or</p>

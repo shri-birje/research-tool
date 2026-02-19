@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const MODEL = 'gpt-4-turbo-preview';
+const MODEL = 'gpt-4o-mini';
 
 interface LLMRequest {
   prompt: string;

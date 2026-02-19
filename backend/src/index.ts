@@ -1,13 +1,14 @@
+import dotenv from 'dotenv';
+dotenv.config();
+console.log("API KEY LOADED:", !!process.env.OPENAI_API_KEY);
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import path from 'path';
 import multer from 'multer';
-import dotenv from 'dotenv';
 import { extractFinancialStatements } from './tools/financialExtractor';
 import { analyzeEarningsCall } from './tools/earningsAnalyzer';
 import { extractTextFromPDF } from './utils/pdfProcessor';
 
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
