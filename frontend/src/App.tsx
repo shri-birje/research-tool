@@ -27,9 +27,7 @@ function App() {
       formData.append('document', file);
       formData.append('toolType', toolType);
 
-      const apiUrl = process.env.NODE_ENV === 'production' 
-        ? `${window.location.origin}/api/process`
-        : 'http://localhost:3001/api/process';
+const apiUrl = `${import.meta.env.VITE_API_URL}/api/process`;
 
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -55,9 +53,7 @@ function App() {
     }
 
     try {
-      const apiUrl = process.env.NODE_ENV === 'production' 
-        ? `${window.location.origin}/api/download-financial`
-        : 'http://localhost:3001/api/download-financial';
+     const apiUrl = `${import.meta.env.VITE_API_URL}/api/download-financial`;
 
       const response = await fetch(apiUrl, {
         method: 'POST',
