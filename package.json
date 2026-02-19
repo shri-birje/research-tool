@@ -1,0 +1,19 @@
+{
+  "name": "research-portal",
+  "version": "1.0.0",
+  "description": "AI-powered research portal for financial document analysis",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:backend && npm run build:frontend",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start"
+  },
+  "keywords": ["research", "financial", "analysis", "ai", "document-processing"],
+  "author": "",
+  "license": "MIT"
+}

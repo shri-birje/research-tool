@@ -1,0 +1,168 @@
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin: 0 0 24px 0;
+  color: #1a1a1a;
+}
+
+.toolSelection {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.toolLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+}
+
+.toolLabel input[type='radio'] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.toolLabel input[type='radio']:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.toolDescription {
+  margin: -12px 0 8px 32px;
+  font-size: 14px;
+  color: #666;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dropZone {
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.dropZone:hover {
+  border-color: #0066cc;
+  background: #f0f6ff;
+}
+
+.dropZone.active {
+  border-color: #0066cc;
+  background: #e8f2ff;
+}
+
+.dropZone:has(input:disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dropText {
+  margin: 0 0 12px 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.browseBtn {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.browseBtn:hover:not(:disabled) {
+  background: #0052a3;
+}
+
+.browseBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hint {
+  margin: 12px 0 0 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.selectedFile {
+  margin: 0;
+  color: #2e7d32;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.fileSize {
+  margin: 4px 0 12px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.changeBtn {
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.changeBtn:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.changeBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submitBtn {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #0052a3;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #ccc;
+}

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: research-portal-api
+    runtime: node
+    buildCommand: "cd backend && npm install && npm run build"
+    startCommand: "cd backend && node dist/index.js"
+    envVars:
+      - key: OPENAI_API_KEY
+        scope: run
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+    disk:
+      name: research-portal-storage
+      mountPath: /app/data
+      sizeGB: 1
